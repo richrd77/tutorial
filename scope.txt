@@ -16,12 +16,14 @@ define function
 	arrow function
 Logic operations
 loops
+//TODO cover after OOPS 
 prototype
 class
 inheritance
 encapsulation - getter,setter
-interface
 first assignment
+Use Strict
+THIS
 DOM intro
 change appearence on DOM load
 read value from controls on DOM load

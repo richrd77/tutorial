@@ -17,7 +17,36 @@ const someCont = 'SomeConst';
 
 
 //difference between var & let
-//TODO:- cover after function
+
+// console.log(varObject);
+
+var varObject = 'outside'
+
+// function MyFunction(){
+//     var varObject = 'created using var';
+//     let letObject = 'created using Let'
+//     console.log(varObject);
+//     console.log(window.varObject);
+//     console.log(letObject);
+// }
+
+// function MyFunction(m) {
+//     if (true) {
+//         var realanswer = 'not null';
+//     }
+
+//     {
+//         let letans = 'let answer';
+//     }
+//     console.log(letans);
+//     console.log(realanswer);
+//     // return realanser;
+// }
+
+// console.log(MyFunction());
+
+// MyFunction();
+
 
 
 var sum = 'F' + '5';
@@ -205,10 +234,60 @@ div = 3 / 2.3;
 // console.log(Math.ceil(div));
 //TODO: fetch only number before decimal point
 
+// console.log(div.toString().split('.')[0]);
+// console.log(div);
+
+
+let str = 'First-Second-third-fourth';
+// console.log(str.split('-'));
+// console.log(str.substr(0,10));
+
+// str.length
+
+// function ReplaceHypen(inputString) {
+//     let hypenIndex = inputString.indexOf('-',0);
+//     if(hypenIndex != -1) {
+//         console.log(inputString.substr(0, hypenIndex) 
+//         + inputString.substr(hypenIndex + 1, inputString.length));
+//     }
+// }
+
+// console.log(str.replaceAll('-','1'));
+// console.log(ReplaceHypen(str));
 n = 64;
-// console.log(Math.sqrt(n))
+s = '101';
+// console.log(n);
+// console.log(n.toString());
+console.log(n + Number(s));
 // console.log(Math.sin(90))
 // console.log(Math.cos(90))
+
+//Pad Start - pad End
+
+userId = 101; //000100
+// console.log(userId.toString().padStart(6,'X'))
+// console.log(userId.toString().padEnd(6,'X'))
+
+// usersarry = [
+//     { userId: 10, name: 'User10' },
+//     { userId: 1000, name: 'User1000' },
+//     { userId: 100, name: 'User100' },
+// ];
+
+// console.log(usersarry.sort(function (a, b) {
+//     if (a.userId == b.userId) {
+//         return 0;
+//     } else if (a.userId > b.userId) {
+//         return 1;
+//     } else {
+//         return -1;
+//     }
+// }));
+
+// arr1 = [1,2,3];
+// arr2 = [8,9,0];
+
+// console.log(arr1.concat(arr2).sort());
 
 num1 = 100; num2 = 6;
 // console.log(num1 === num2);
@@ -276,3 +355,16 @@ let o = [1, 2, 3];
 //     console.log(this);
 // }
 // console.log(myObj.display());
+
+
+//THIS
+// console.log(this);
+// function MyFunction() {
+//     console.log(this);
+// }
+
+// function SecondFunction() {
+//     MyFunction();
+//     // console.log(func);
+// }
+// SecondFunction();
