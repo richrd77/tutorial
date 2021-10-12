@@ -43,3 +43,5 @@ console.log(newEmp.Department);
 // designation based on age 1-20 => newbie; 20-30 => junior; 
 // 30-40 => Senior; 40 < => Expert
 // designation value cannot be set
+// sort by age
+// display function "Name - designation"
