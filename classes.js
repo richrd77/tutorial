@@ -146,16 +146,16 @@ users = [
 // americanUser.Country = 'UK'
 // console.log(americanUser.Country);
 
-class Employee {
-    constructor() {
-        this.name = '';
-        this.id = '';
-    }
+// class Employee {
+//     constructor() {
+//         this.name = '';
+//         this.id = '';
+//     }
 
-    print(obj) {
-        console.log(obj);
-    }
-}
+//     print(obj) {
+//         console.log(obj);
+//     }
+// }
 
 // interface IDisplay {
 //     print();

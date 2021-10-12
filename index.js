@@ -258,7 +258,7 @@ n = 64;
 s = '101';
 // console.log(n);
 // console.log(n.toString());
-console.log(n + Number(s));
+// console.log(n + Number(s));
 // console.log(Math.sin(90))
 // console.log(Math.cos(90))
 
