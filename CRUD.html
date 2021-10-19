@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .error {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="frm">
+        <input type="text" name="uname" data-ulike="My123" id="uname">
+        <div id="mydiv" data-divdata123="MyDivData" class="initial-class second-class">
+            <input type="button" value="Child">
+        </div>
+        <br>
+        <br>
+        <input type="text" name="pass" id="pass">
+        <br>
+        <br>
+        <input type="submit" value="Login" id="btn">
+    </form>
+
+    <!-- <form id="frm">
+        <input type="text" name="uname" id="uname" required><br><br>
+        <input type="text" name="pass" id="pass" required minlength="2" maxlength="5"><br><br>
+        <input type="submit" value="Login" id="btn">
+    </form> -->
+
+    <script src="./form.js"></script>
+</body>
+
+</html>

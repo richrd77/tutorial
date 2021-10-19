@@ -141,16 +141,33 @@
 //     console.log(document.getElementById('p2').value);
 // }
 
-document.getElementById('btn').addEventListener('click', function () {
-    const dropDownValue = document.getElementById('dd1').value;
-    const txt = document.getElementById('txt');
-    const sp = document.getElementById('s');
-    if(dropDownValue == 'b') {
-        sp.style.backgroundColor = txt.value;
-    } else if(dropDownValue == 'c') {
-        sp.style.color = txt.value;
-    } else if(dropDownValue == 'v') {
-        sp.innerText = txt.value;
-    }
-    txt.value = '';
-});
+// document.getElementById('btn').addEventListener('click', function () {
+//     const dropDownValue = document.getElementById('dd1').value;
+//     const txt = document.getElementById('txt');
+//     const sp = document.getElementById('s');
+//     if(dropDownValue == 'b') {
+//         sp.style.backgroundColor = txt.value;
+//     } else if(dropDownValue == 'c') {
+//         sp.style.color = txt.value;
+//     } else if(dropDownValue == 'v') {
+//         sp.innerText = txt.value;
+//     }
+//     txt.value = '';
+// });
+
+
+// document.getElementById('gp').addEventListener('click', function (e) {
+//     console.log('Grand Parent Click Event');
+//      //stops event bubling and event capturing
+//     e.stopPropagation();
+// }, true);
+
+// document.getElementById('p').addEventListener('click', function (e) {
+//     console.log('Parent Click Event');
+//     //stops Event Bubling
+// }, true);
+
+// document.getElementById('c').addEventListener('click', function (e) {
+//     console.log('Child Click Event');
+//     e.stopPropagation();
+// }, true);
