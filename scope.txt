@@ -33,12 +33,13 @@ Bubbling & capture
 change appearence in event listeners
 update value in event listeners
 working with form
-add elements dynamically
+add elements dynamically //cover event listeners for dynamically added elements and append vs appendChild
 error handling
 second assignment
 promises
 async await
 ajax - GET, POST, PUT, DELETE
+Cookies, LocalStorage
 third assignment
 scopes in JS
 closures
