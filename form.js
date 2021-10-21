@@ -43,36 +43,36 @@
 // const numbersarray = [10, 2, 3, 4, 56, 7];
 // numbersarray.push(1);
 
-function attachNumber() {
-    const txtbox = document.getElementById('txt');
+// function attachNumber() {
+//     const txtbox = document.getElementById('txt');
 
-    //step 1
-    const newListItem = document.createElement('li');
+//     //step 1
+//     const newListItem = document.createElement('li');
 
-    //step2
-    newListItem.innerText = txtbox.value;
-    newListItem.style.color = 'red';
+//     //step2
+//     newListItem.innerText = txtbox.value;
+//     newListItem.style.color = 'red';
 
-    //step3
-    document.getElementById('lst').appendChild(newListItem);
-}
+//     //step3
+//     document.getElementById('lst').appendChild(newListItem);
+// }
 
-document.getElementById('btn').addEventListener('click', attachNumber);
+// document.getElementById('btn').addEventListener('click', attachNumber);
 
-function fromarray(arr) {
-    arr.forEach(function (e) {
+// function fromarray(arr) {
+//     arr.forEach(function (e) {
 
-        //step1
-        const newLi = document.createElement('li');
+//         //step1
+//         const newLi = document.createElement('li');
 
-        //step2
-        newLi.innerText = e;
-        newLi.style.color = 'red';
+//         //step2
+//         newLi.innerText = e;
+//         newLi.style.color = 'red';
 
-        //step3
-        document.getElementById('lst').appendChild(newLi);
-    });
-}
+//         //step3
+//         document.getElementById('lst').appendChild(newLi);
+//     });
+// }
 
 // function RadioChange(e) {
 //     console.log('changed-' + e);
@@ -84,3 +84,79 @@ function fromarray(arr) {
 //         }
 //     });
 // }
+
+// function addNewLi() {
+//     // step1 create Element
+//     let newLi = document.createElement('li');
+
+//     //step2 add attributes
+//     newLi.innerText = document.getElementById('txt').value;
+//     newLi.style.backgroundColor = 'purple';
+//     newLi.style.color = 'white';
+
+//     //step3 append to parent
+//     document.getElementById('lst').appendChild(newLi);
+
+//     document.getElementById('txt').value = '';
+// }
+
+
+// function addNewLiWithClick() {
+//     // step1 create Element
+//     let newLi = document.createElement('li');
+
+//     //step2 add attributes
+//     newLi.innerText = document.getElementById('txt').value;
+//     newLi.style.backgroundColor = 'purple';
+//     newLi.style.color = 'white';
+//     newLi.onclick = function () {
+//         alert(newli.innerText);
+//     };
+
+
+//     //step3 append to parent
+//     document.getElementById('lst').appendChild(newLi);
+
+//     document.getElementById('txt').value = '';
+// }
+
+// function appendChidren() {
+//     //step1
+//     const newLi1 = document.createElement('li');
+//     const newLi2 = document.createElement('li');
+
+//     //step2
+//     newLi1.innerText = document.getElementById('txt').value;
+//     newLi2.innerText = document.getElementById('txt').value;
+
+
+//     // let newElements = ;
+
+//     //step3
+//     document.getElementById('lst').append(...[newLi1, newLi2]);
+// }
+
+// document.getElementById('btn').addEventListener('click', appendChidren);
+
+
+function addRow() {
+    //step1
+    const tableRow = document.createElement('tr');
+    const rowdiv1 = document.createElement('td');
+    const rowdiv2 = document.createElement('td');
+    const b = document.createElement('button');
+
+    //step2
+    rowdiv1.innerText = document.getElementById('txt').value;
+
+    b.innerText = 'delete';
+    rowdiv2.appendChild(b);
+    tableRow.appendChild(rowdiv1);
+    tableRow.appendChild(rowdiv2);
+
+
+    //step3
+    document.getElementById('tblbody').appendChild(tableRow);
+}
+
+document.getElementById('btn').addEventListener('click', addRow);

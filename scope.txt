@@ -34,7 +34,7 @@ change appearence in event listeners
 update value in event listeners
 working with form
 add elements dynamically //cover event listeners for dynamically added elements and append vs appendChild
-error handling
+error handling // cover spread operator
 second assignment
 promises
 async await
