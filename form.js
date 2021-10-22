@@ -150,6 +150,12 @@ function addRow() {
     rowdiv1.innerText = document.getElementById('txt').value;
 
     b.innerText = 'delete';
+    b.onclick = function () {
+        const conf = confirm('are you sure you want to delete this row?');
+        if(conf == true) {
+            document.getElementById('tblbody').removeChild(tableRow);
+        }
+    };
     rowdiv2.appendChild(b);
     tableRow.appendChild(rowdiv1);
     tableRow.appendChild(rowdiv2);
@@ -159,4 +165,4 @@ function addRow() {
     document.getElementById('tblbody').appendChild(tableRow);
 }
 
-document.getElementById('btn').addEventListener('click', addRow);
+// document.getElementById('btn').addEventListener('click', addRow);
