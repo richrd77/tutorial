@@ -39,7 +39,7 @@ second assignment
 promises
 async await
 ajax - GET, POST, PUT, DELETE
-Cookies, LocalStorage
+Cookies, LocalStorage // cover update cookie
 third assignment
 scopes in JS
 closures
