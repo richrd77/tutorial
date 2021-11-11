@@ -66,32 +66,89 @@
 // server <- client [Put] with key (Id)
 // server <- client [delete] with key (Id)
 
-
-const request = new XMLHttpRequest();
-request.onreadystatechange = function (e, r) {
-    // console.log(r.responseText);
-    if (this.readyState == 4) {
-        // console.log(JSON.parse(request.responseText));
-        const respnse = JSON.parse(request.responseText);
-        respnse.forEach(function (o) {
-            addRow(o);
-        });
+function PopulateList() {
+    const request = new XMLHttpRequest();
+    request.onreadystatechange = function (e, r) {
+        // console.log(r.responseText);
+        if (this.readyState == 4) {
+            // const res = request.responseText;
+            {
+                const respnse = JSON.parse(request.responseText);
+                respnse.forEach(function (o) {
+                    addRow(o);
+                });
+            }
+        }
+        // console.log(e);
     }
-    // console.log(e);
+    request.open('GET', 'http://localhost:4000/shoppingList');
+    request.send();
 }
-request.open('GET', 'https://jsonplaceholder.typicode.com/posts');
-request.send();
+
 
 function addRow(obj) {
     const newTr = document.createElement('tr');
+
+    newTr.addEventListener('click', function () {
+        EditRow(newTr);
+    });
+
     const newTdTitle = document.createElement('td');
     const newTdBody = document.createElement('td');
     const newTdUserId = document.createElement('td');
-    newTdTitle.innerText = obj.title;
-    newTdBody.innerText = obj.body;
-    newTdUserId.innerText = obj.userId;
+    newTdTitle.innerText = obj.name;
+    newTdTitle.classList.add('first-col');
+    newTdBody.innerText = obj.quantity;
+    newTdUserId.innerText = obj.remarks;
     newTr.appendChild(newTdTitle);
     newTr.appendChild(newTdBody);
     newTr.appendChild(newTdUserId);
     document.getElementById('tbl').appendChild(newTr);
+}
+
+PopulateList();
+
+function PostForm() {
+    const n = document.getElementById('name').value;
+    const q = document.getElementById('quantity').value;
+    const r = document.getElementById('remarks').value;
+    let newRow = { name: n, quantity: q, remarks: r };
+
+    const foundItem = [...document.querySelectorAll('.first-col')].map(e => e.innerText).find(function (elm) {
+        return elm == n;
+    });
+
+    console.log(foundItem);
+
+    if (foundItem) {
+        //PUT
+        
+    } else {
+        //POST
+        let postRequest = new XMLHttpRequest();
+        postRequest.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                PopulateList();
+            }
+        };
+        postRequest.open('POST', 'http://localhost:4000/shoppingList');
+        postRequest.setRequestHeader('content-Type', 'application/json');
+        postRequest.send(JSON.stringify(newRow));
+    }
+
+
+}
+
+document.getElementById('frm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    PostForm();
+});
+
+
+function EditRow(currentRow) {
+    const children = currentRow.childNodes;
+    document.getElementById('name').value = children[0].innerText;
+    document.getElementById('quantity').value = children[1].innerText;
+    document.getElementById('remarks').value = children[2].innerText;
+    document.getElementById('name').setAttribute('disabled', 'disabled');
 }
