@@ -73,6 +73,7 @@ function PopulateList() {
         if (this.readyState == 4) {
             // const res = request.responseText;
             {
+                document.getElementById('tbl').innerHTML = '';
                 const respnse = JSON.parse(request.responseText);
                 respnse.forEach(function (o) {
                     addRow(o);
@@ -100,9 +101,22 @@ function addRow(obj) {
     newTdTitle.classList.add('first-col');
     newTdBody.innerText = obj.quantity;
     newTdUserId.innerText = obj.remarks;
+
+
+    const newDeleteTd = document.createElement('td');
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerText = 'Delete';
+    // deleteBtn.onclick = DeleteRow(newTr);
+    deleteBtn.onclick = function () {
+        DeleteRow(newTr);
+    };
+    newDeleteTd.appendChild(deleteBtn);
+
+
     newTr.appendChild(newTdTitle);
     newTr.appendChild(newTdBody);
     newTr.appendChild(newTdUserId);
+    newTr.appendChild(newDeleteTd);
     document.getElementById('tbl').appendChild(newTr);
 }
 
@@ -122,7 +136,15 @@ function PostForm() {
 
     if (foundItem) {
         //PUT
-        
+        let putRequest = new XMLHttpRequest();
+        putRequest.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                PopulateList();
+            }
+        };
+        putRequest.open('PUT', 'http://localhost:4000/shoppingList/' + n);
+        putRequest.setRequestHeader('content-Type', 'application/json');
+        putRequest.send(JSON.stringify(newRow));
     } else {
         //POST
         let postRequest = new XMLHttpRequest();
@@ -151,4 +173,37 @@ function EditRow(currentRow) {
     document.getElementById('quantity').value = children[1].innerText;
     document.getElementById('remarks').value = children[2].innerText;
     document.getElementById('name').setAttribute('disabled', 'disabled');
+}
+
+
+function DeleteRow(currentRow) {
+    // console.log(currentRow);
+    // console.log('inside DeleteRow');
+    const confirmation = confirm('are u sure to delete this row?');
+
+    if (confirmation) {
+        //make delete request
+        const children = currentRow.childNodes;
+        let name, quant, remarks;
+
+        for (let index = 0; index < (children.length - 1); index++) {
+            if (index == 0) {
+                name = children[index].innerText;
+            } else if (index == 1) {
+                quant = children[index].innerText;
+            } else if (index == 2) {
+                remarks = children[index].innerText;
+            }
+        }
+        let newRow = { name: name, quantity: quant, remarks: remarks };
+        let deleteRequest = new XMLHttpRequest();
+        deleteRequest.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                PopulateList();
+            }
+        };
+        deleteRequest.open('DELETE', 'http://localhost:4000/shoppingList/' + name);
+        deleteRequest.setRequestHeader('content-Type', 'application/json');
+        deleteRequest.send(JSON.stringify(newRow));
+    }
 }
