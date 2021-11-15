@@ -9,6 +9,7 @@
 </head>
 
 <body style="">
+    <!-- ,<input type="checkbox"> -->
     <form id="frm">
         <input type="text" id="name" placeholder="Name" required>
         <input type="number" id="quantity" placeholder="Quantity" required>
@@ -24,7 +25,14 @@
                 <td></td>
             </tr>
         </thead>
-        <tbody id="tbl"></tbody>
+        <tbody id="tbl">
+            <tr>
+                <td><input class="nip0" style="display: none;" type="text" value="123"><label class="nl0">123</label> </td>
+                <td><input class="qip0" style="display: none;" type="text" value="456"><label class="ql0">456</label> </td>
+                <td><input class="rip0" style="display: none;" type="text" value="789"><label class="rl0">789</label> </td>
+                <td><button onclick="Toggle()">Edit</button> </td>
+            </tr>
+        </tbody>
     </table>
     <script src="./ajax.js"></script>
 </body>

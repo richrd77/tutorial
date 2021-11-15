@@ -45,3 +45,11 @@ console.log(newEmp.Department);
 // designation value cannot be set
 // sort by age
 // display function "Name - designation"
+
+
+// assignment3
+// Form ELement -> 3 fields [Name - required, Quantity - required, Remarks - optional] - on submit make POST request
+// Table Element -> with headers [Name, Quantity, Remarks, empty Column] - populate each row by making GET request
+// in empty Column there should be 2 buttons (Edit, Delete)
+// on click of Edit button in the same row there should be textboxes and labels should disappear, EDIT button should be "Save" and Make PUT request
+// on click of DELETE button ask confirmation, if yes, then make DELETE request

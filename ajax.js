@@ -73,7 +73,7 @@ function PopulateList() {
         if (this.readyState == 4) {
             // const res = request.responseText;
             {
-                document.getElementById('tbl').innerHTML = '';
+                // document.getElementById('tbl').innerHTML = '';
                 const respnse = JSON.parse(request.responseText);
                 respnse.forEach(function (o) {
                     addRow(o);
@@ -207,3 +207,12 @@ function DeleteRow(currentRow) {
         deleteRequest.send(JSON.stringify(newRow));
     }
 }
+
+// function Toggle(index) {
+//     document.querySelector('.nip0').style.display='';
+//     document.querySelector('.qip0').style.display='';
+//     document.querySelector('.rip0').style.display='';
+//     document.querySelector('.nl0').style.display='none';
+//     document.querySelector('.ql0').style.display='none';
+//     document.querySelector('.rl0').style.display='none';
+// }

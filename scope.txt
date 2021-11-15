@@ -45,4 +45,4 @@ scopes in JS
 closures
 Immediately invoked functions
 Best Practices
-Small Project work
+Small Project work - // TODO
