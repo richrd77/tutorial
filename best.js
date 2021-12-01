@@ -153,55 +153,119 @@ let myObj = { name: '', dept123: 'IT' };
 //     console.log('inside other function');
 // }
 
-function NewFunc(p) {
-    console.log('inside NewFunc parameter=' + p);
-};
+// function NewFunc(p) {
+//     console.log('inside NewFunc parameter=' + p);
+// };
 
-// NewFunc('this is p');
-
-
-
-// (function (p) {
-//     console.log('inside IIF parameter=' + p);
-// })('this is p');
-
-const someEmp = { name: 'john', dept: 'IT' };
-const someOtherEmp = { name: 'Sue', dept: 'accounts' };
-
-// (function (emp, secondP) {
-//     console.log(`Employee ${emp.name} is from ${emp.dept} Department`);
-//     console.log(secondP);
-// })(someOtherEmp, 'this is second param');
-
-// (function () {
-//     console.log('new IIF');
-// })();
-
-// (function (e) {
-//     console.log(e);
-// })(someEmp);
+// // NewFunc('this is p');
 
 
 
-class Employee {
-    constructor(name, dept) {
+// // (function (p) {
+// //     console.log('inside IIF parameter=' + p);
+// // })('this is p');
+
+// const someEmp = { name: 'john', dept: 'IT' };
+// const someOtherEmp = { name: 'Sue', dept: 'accounts' };
+
+// // (function (emp, secondP) {
+// //     console.log(`Employee ${emp.name} is from ${emp.dept} Department`);
+// //     console.log(secondP);
+// // })(someOtherEmp, 'this is second param');
+
+// // (function () {
+// //     console.log('new IIF');
+// // })();
+
+// // (function (e) {
+// //     console.log(e);
+// // })(someEmp);
+
+
+
+// class Employee {
+//     constructor(name, dept) {
+//         this.Name = name;
+//         this.Dept = dept;
+//     }
+
+//     DisplayName() {
+//         console.log(this.Name);
+//     }
+
+//     DisplayDepartment() {
+//         console.log(this.Dept);
+//     }
+// }
+
+
+// const myEmp = new Employee('john', 'IT');
+// myEmp.DisplayName();
+// myEmp.DisplayDepartment();
+// (function(e) {
+//     console.log(`Employee ${e.Name} is from ${e.Dept} Dept`);
+// })(myEmp)
+
+
+// let myVariable = 1;
+
+// let myFunc = function() {
+//     console.log(myVariable);
+// }
+
+// myFunc();
+
+// function myFunc() {
+//     // console.log(myVariable);
+//     // let insideFUnctionVariable;
+
+//     function InsideFunction() {
+//         console.log(insideFUnctionVariable);
+//         // console.log(myVariable);
+//     }
+//     let insideFUnctionVariable = 123;
+
+//     InsideFunction();
+// }
+
+
+// var myVariable = 1;
+// let myVariableLet = 1;
+
+// // function myvariableFunction () {
+// // }
+
+// // variableFunction();
+// myFunc();
+// // InsideFunction();
+
+
+// function OuterFunction(){
+//     var outerFunctionVariable = 'from outside function';
+//     return function(){
+//         console.log('inside function');
+//         console.log(outerFunctionVariable);
+//     }
+// }
+
+// OuterFunction()();
+// console.log(outerFunctionVariable);
+
+
+class MyClass {
+
+
+
+    constructor(name) {
         this.Name = name;
-        this.Dept = dept;
+        var age = 21;
+        this.Getage = function() {
+            return age;
+        }
     }
 
-    DisplayName() {
-        console.log(this.Name);
-    }
-
-    DisplayDepartment() {
-        console.log(this.Dept);
-    }
 }
 
-
-const myEmp = new Employee('john', 'IT');
-myEmp.DisplayName();
-myEmp.DisplayDepartment();
-(function(e) {
-    console.log(`Employee ${e.Name} is from ${e.Dept} Dept`);
-})(myEmp)
+myObj = new MyClass('ggg');
+console.log(myObj);
+console.log(myObj.Name);
